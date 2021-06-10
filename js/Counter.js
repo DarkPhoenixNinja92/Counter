@@ -1,6 +1,6 @@
 let count = 0;
 
-function increaseCount() {
+let increaseCount = () => {
     count++;
     document.getElementById("counter-value").innerHTML = count;
     if (count > 0) {
@@ -11,7 +11,7 @@ function increaseCount() {
     }
 }
 
-function decreaseCount() {
+let decreaseCount = () => {
     count--;
     document.getElementById("counter-value").innerHTML = count;
     if (count < 0) {
@@ -21,3 +21,8 @@ function decreaseCount() {
         document.getElementById("counter-value").style.color = "black";
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("add-button").addEventListener('click', increaseCount);
+    document.getElementById("lower-button").addEventListener('click', decreaseCount);
+})
